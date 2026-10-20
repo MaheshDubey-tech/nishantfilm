@@ -1,6 +1,6 @@
 "use strict";
 
-const { requireAdmin } = require("./_lib");
+const { requireAdmin } = require("../_lib");
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
