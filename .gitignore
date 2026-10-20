@@ -21,3 +21,4 @@ pnpm-debug.log*
 
 # Uploads / temp
 /tmp/
+.vercel
