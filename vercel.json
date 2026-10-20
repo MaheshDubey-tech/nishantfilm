@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "nishant-portrait.webp",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "manus-routes.json",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/health", "dest": "/api/health" },
+    { "src": "/nishant-portrait.webp", "dest": "/nishant-portrait.webp" },
+    { "src": "/manus-routes.json", "dest": "/manus-routes.json" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

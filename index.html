@@ -1,0 +1,1150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  <meta name="description" content="Nishant Tiwari offers cinematography, video editing, scriptwriting, reel shoots and promotional videos.">
+  <meta property="og:title" content="Nishant Tiwari — Cinematography, Reels & Editing">
+  <meta property="og:description" content="From the first script to the final cut: cinematography, editing, reels and promotional videos.">
+  <meta property="og:type" content="website">
+  <title>Nishant Tiwari — Cinematography, Reels & Editing</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2308080a'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' font-weight='700' fill='%23ff3b1d'%3ENT%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; background: #08080a; scroll-behavior: smooth; }
+    @media (max-width: 1920px) { html { font-size: .833333vw; } }
+    @media (max-width: 1440px) { html { font-size: 1.111111vw; } }
+    @media (max-width: 1024px) { html { font-size: 1.5625vw; } }
+    @media (max-width: 640px) { html { font-size: 4.444444vw; } }
+    :root {
+      --background: #08080a;
+      --foreground: #f3f1ea;
+      --surface: #111114;
+      --surface-2: #17171b;
+      --muted: #85837e;
+      --line: rgba(243,241,234,.12);
+      --line-strong: rgba(243,241,234,.24);
+      --accent: #ff3b1d;
+      --accent-2: #ff6a3d;
+      --gutter: 2.5rem;
+      --section: 8rem;
+      --font-display: "Anton", Impact, sans-serif;
+      --font-sans: "Onest", Arial, sans-serif;
+    }
+    @media (max-width: 640px) { :root { --gutter: 16px; --section: 5.5rem; } }
+    img, video { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button, a, input { font: inherit; }
+    button { color: inherit; border: 0; background: none; cursor: pointer; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--accent); color: var(--background); }
+    body { min-width: 320px; overflow-x: hidden; background: var(--background); color: var(--foreground); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    body.locked { overflow: hidden; }
+    .display { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: -.015em; }
+    .eyebrow { font-size: .7rem; font-weight: 500; line-height: 1.3; letter-spacing: .2em; text-transform: uppercase; }
+    .eyebrow-mark { display: flex; align-items: center; gap: .75rem; color: var(--muted); }
+    .eyebrow-mark::before { content: ""; flex: 0 0 .48rem; width: .48rem; height: .48rem; border-radius: 50%; background: var(--accent); }
+    .section-wrap { padding-inline: var(--gutter); }
+    .section-title { margin-top: 1.3rem; font-size: clamp(2.5rem, 5.1vw, 5.9rem); line-height: .91; max-width: 13ch; }
+    .section-copy { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+
+    /* The intro count and upward wipe echo the supplied cinematic reference. */
+    .preloader { position: fixed; inset: 0; z-index: 100; display: flex; align-items: flex-end; justify-content: space-between; padding: var(--gutter); background: var(--background); transition: transform .65s cubic-bezier(.22,1,.36,1); }
+    .preloader::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--background); }
+    .preloader.done { transform: translateY(-100%); pointer-events: none; }
+    .preloader-label { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 3.8rem); line-height: 1; text-transform: uppercase; letter-spacing: -.015em; transition: opacity .3s ease; }
+    .preloader-count { font-family: var(--font-display); font-size: clamp(4.5rem, 10vw, 11rem); line-height: .83; font-variant-numeric: tabular-nums; transition: opacity .3s ease; }
+    .preloader-count span { color: var(--accent); }
+    .preloader.fade .preloader-label, .preloader.fade .preloader-count { opacity: 0; }
+
+    .site-header { position: fixed; inset: 0 0 auto; z-index: 50; pointer-events: none; }
+    .nav-shell { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 1.35rem var(--gutter); pointer-events: auto; }
+    .brand { display: inline-flex; align-items: center; gap: .8rem; }
+    .brand-mark { width: 2.5rem; height: 2.5rem; display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: 50%; font-size: .77rem; font-weight: 600; letter-spacing: -.04em; transition: color .3s ease, border-color .3s ease; }
+    .brand:hover .brand-mark { color: var(--accent); border-color: var(--accent); }
+    .brand-name { color: var(--muted); transition: color .3s ease; }
+    .brand:hover .brand-name { color: var(--foreground); }
+    .nav-links { display: flex; align-items: center; gap: 2.2rem; }
+    .nav-links a { position: relative; padding-block: .35rem; color: var(--muted); transition: color .25s ease; }
+    .nav-links a::after { content: ""; position: absolute; inset: auto 0 -.2rem; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+    .nav-links a:hover { color: var(--foreground); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta { display: inline-flex; gap: .55rem; align-items: center; color: var(--foreground) !important; }
+    .nav-cta::before { content: ""; width: .42rem; height: .42rem; border-radius: 50%; background: var(--accent); }
+    .menu-toggle { display: none; width: 2.6rem; height: 2.6rem; flex-direction: column; align-items: center; justify-content: center; gap: .32rem; border: 1px solid var(--line-strong); border-radius: 50%; }
+    .menu-toggle span { width: 1.05rem; height: 1px; background: var(--foreground); transition: transform .3s ease, opacity .2s ease; }
+    .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(.16rem) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-.16rem) rotate(-45deg); }
+    .mobile-menu { position: fixed; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: center; gap: .9rem; padding: var(--gutter); background: var(--background); opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility .4s ease; }
+    .mobile-menu.open { opacity: 1; visibility: visible; }
+    .mobile-menu a { width: fit-content; font-family: var(--font-display); font-size: clamp(3rem, 11vw, 5rem); line-height: .96; text-transform: uppercase; transform: translateY(1rem); opacity: 0; transition: transform .48s cubic-bezier(.16,1,.3,1), opacity .38s ease; }
+    .mobile-menu.open a { transform: translateY(0); opacity: 1; }
+    .mobile-menu a:nth-child(2) { transition-delay: .06s; }
+    .mobile-menu a:nth-child(3) { transition-delay: .12s; }
+    .mobile-menu a:nth-child(4) { transition-delay: .18s; }
+    .mobile-menu .mobile-menu-note { margin-top: 2rem; color: var(--muted); }
+
+    main { position: relative; overflow: hidden; }
+    .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; isolation: isolate; }
+    .hero::before { content: ""; position: absolute; z-index: -2; inset: 0; background: radial-gradient(ellipse at 50% 64%, rgba(69,52,42,.24), transparent 43%), linear-gradient(180deg, rgba(8,8,10,.12), transparent 34%, #08080a 100%); }
+    .ambient-canvas, .hero-light-sweep { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+    .ambient-canvas { opacity: .86; filter: blur(.12px); }
+    .hero-light-sweep { inset: -20% -55%; width: 210%; opacity: .2; background: linear-gradient(110deg, transparent 43%, rgba(255,106,61,.1) 49%, rgba(243,241,234,.035) 50%, transparent 57%); transform: translateX(-45%) rotate(-8deg); animation: light-sweep 18s cubic-bezier(.4,0,.2,1) infinite; mix-blend-mode: screen; }
+    @keyframes light-sweep { 0%, 22% { transform: translateX(-48%) rotate(-8deg); } 72%, 100% { transform: translateX(48%) rotate(-8deg); } }
+    .hero-grain { position: absolute; z-index: 2; inset: 0; opacity: .085; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E"); mix-blend-mode: screen; }
+    .hero-top { position: relative; z-index: 5; display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; padding: 7.2rem var(--gutter) 0; }
+    .hero-role { display: flex; flex-direction: column; gap: .15rem; font-size: clamp(1.05rem, 1.7vw, 1.6rem); line-height: 1.1; }
+    .hero-role span { display: block; overflow: hidden; }
+    .hero-role b { display: block; font-weight: 400; transform: translateY(110%); opacity: 0; }
+    .hero-intro { max-width: 20rem; padding-top: .3rem; color: var(--muted); font-size: .94rem; line-height: 1.65; text-align: right; opacity: 0; transform: translateY(1rem); }
+    .hero-name { position: absolute; z-index: 1; inset: auto 0 -.03em; display: flex; flex-direction: column; align-items: center; color: var(--accent); font-size: clamp(6.4rem, 16vw, 22rem); line-height: .75; white-space: nowrap; transform: translateY(6%); pointer-events: none; }
+    .hero-name span { display: block; overflow: hidden; }
+    .hero-name i { display: block; font-style: normal; transform: translateY(108%); opacity: 0; }
+    .hero-name .name-second { margin-top: .07em; }
+    .hero-portrait { position: absolute; z-index: 3; bottom: 0; left: 50%; width: min(34vw, 36rem); height: 70svh; transform: translateX(-50%); pointer-events: none; display: grid; place-items: center; }
+    .portrait-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 22%; opacity: 0; transition: opacity .6s ease; -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%); }
+    .hero-portrait.has-image .portrait-image { opacity: 1; }
+    .portrait-placeholder { position: relative; width: min(67%, 19rem); height: 76%; display: grid; place-items: center; border: 1px solid rgba(243,241,234,.2); background: linear-gradient(150deg, rgba(35,34,34,.7), rgba(11,11,13,.92) 50%, rgba(41,26,23,.55)); box-shadow: 0 0 90px rgba(255,59,29,.07), inset 0 0 70px rgba(255,255,255,.025); overflow: hidden; transition: opacity .45s ease; }
+    .portrait-placeholder::before, .portrait-placeholder::after { content: ""; position: absolute; width: 140%; height: 1px; background: rgba(255,255,255,.08); transform: rotate(-35deg); }
+    .portrait-placeholder::after { transform: rotate(35deg); }
+    .portrait-placeholder .target { position: relative; z-index: 1; width: 5.3rem; height: 5.3rem; display: grid; place-items: center; border: 1px solid rgba(243,241,234,.28); border-radius: 50%; color: var(--accent); font-size: 1.55rem; }
+    .portrait-placeholder .target::before, .portrait-placeholder .target::after { content: ""; position: absolute; background: var(--accent); opacity: .7; }
+    .portrait-placeholder .target::before { width: 1px; height: 7rem; }
+    .portrait-placeholder .target::after { width: 7rem; height: 1px; }
+    .portrait-note { position: absolute; z-index: 2; bottom: 10%; left: 0; right: 0; text-align: center; color: rgba(243,241,234,.52); font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; }
+    .hero-portrait.has-image .portrait-placeholder { opacity: 0; }
+    .hero-base { position: absolute; inset: auto 0 0; z-index: 4; height: 27svh; background: linear-gradient(to bottom, transparent, var(--background)); pointer-events: none; }
+    .hero-bottom { position: absolute; z-index: 5; inset: auto var(--gutter) 2rem; display: flex; justify-content: space-between; align-items: flex-end; }
+    .scroll-cue { display: flex; align-items: center; gap: .75rem; color: var(--muted); opacity: 0; }
+    .scroll-cue::before { content: ""; width: 1px; height: 2.4rem; background: var(--accent); }
+    .hero-index { color: var(--muted); text-align: right; opacity: 0; }
+    .hero-index strong { display: block; margin-bottom: .35rem; color: var(--foreground); font-weight: 400; }
+    .page-ready .hero-role b { animation: rise .76s cubic-bezier(.16,1,.3,1) forwards; }
+    .page-ready .hero-role span:nth-child(2) b { animation-delay: .08s; }
+    .page-ready .hero-role span:nth-child(3) b { animation-delay: .16s; }
+    .page-ready .hero-role span:nth-child(4) b { animation-delay: .24s; }
+    .page-ready .hero-name .name-first i { animation: rise .9s cubic-bezier(.16,1,.3,1) .2s forwards; }
+    .page-ready .hero-name .name-second i { animation: rise .9s cubic-bezier(.16,1,.3,1) .42s forwards; }
+    .page-ready .hero-intro { animation: fade-up .52s cubic-bezier(.16,1,.3,1) .58s forwards; }
+    .page-ready .scroll-cue, .page-ready .hero-index { animation: fade-in .55s ease 1.1s forwards; }
+    @keyframes rise { to { transform: translateY(0); opacity: 1; } }
+    @keyframes fade-up { to { opacity: 1; transform: translateY(0); } }
+    @keyframes fade-in { to { opacity: 1; } }
+
+    .marquee { overflow: hidden; border-block: 1px solid var(--line); padding-block: 1.35rem; }
+    .marquee-track { display: flex; width: max-content; align-items: center; animation: marquee 25s linear infinite; }
+    .marquee-group { display: flex; align-items: center; flex: 0 0 auto; }
+    .marquee-word { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3.35rem); line-height: 1; letter-spacing: -.015em; text-transform: uppercase; white-space: nowrap; }
+    .marquee-dot { flex: 0 0 .55rem; width: .55rem; height: .55rem; margin-inline: 2.1rem; border-radius: 50%; background: var(--accent); }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    .story { display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; padding-block: var(--section); }
+    .story-heading { margin-top: 1.4rem; max-width: 11ch; font-size: clamp(2.8rem, 5.25vw, 6.4rem); line-height: .92; }
+    .story-copy { max-width: 36rem; margin-top: 1.6rem; color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
+    .principles { align-self: end; padding-top: 1rem; }
+    .principle { display: grid; grid-template-columns: 2.2rem 1fr; gap: 1.1rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
+    .principle:last-child { border-bottom: 1px solid var(--line); }
+    .principle-num { color: var(--accent); font-size: .95rem; font-variant-numeric: tabular-nums; }
+    .principle h3 { font-size: 1.13rem; font-weight: 500; letter-spacing: -.025em; }
+    .principle p { max-width: 33rem; margin-top: .45rem; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+
+    .work { padding-block: 2rem var(--section); }
+    .work-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    .work-title { margin-top: 1.25rem; font-size: clamp(2.8rem, 5.4vw, 6.6rem); line-height: .9; }
+    .work-side { max-width: 15rem; padding-bottom: .35rem; color: var(--muted); font-size: .78rem; line-height: 1.55; text-align: right; }
+    .work-side b { display: block; margin-bottom: .5rem; color: var(--accent); font-weight: 500; }
+    .gallery-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; }
+    .gallery-position { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .gallery-controls { display: flex; gap: .45rem; }
+    .gallery-add-button { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 45; display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .8rem 1.1rem; border: 1px solid var(--accent); background: var(--accent); color: var(--background); font-size: .76rem; font-weight: 600; letter-spacing: .055em; text-transform: uppercase; box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.42); transition: background .2s ease, color .2s ease, transform .2s ease; }
+    .gallery-add-button:hover, .gallery-add-button:focus-visible { background: transparent; color: var(--accent); transform: translateY(-1px); }
+    .gallery-control { width: 2.7rem; height: 2.7rem; display: grid; place-items: center; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--foreground); font-size: 1rem; transition: color .2s ease, border-color .2s ease, background .2s ease, opacity .2s ease, transform .2s ease; }
+    .gallery-control:hover:not(:disabled), .gallery-control:focus-visible:not(:disabled) { color: var(--background); border-color: var(--accent); background: var(--accent); transform: translateY(-2px); }
+    .gallery-control:disabled { cursor: not-allowed; opacity: .3; }
+    .gallery-viewport { position: relative; overflow: hidden; margin-top: 1rem; padding: 0; outline: 0; touch-action: pan-y; }
+    .gallery-viewport:focus-visible { box-shadow: 0 0 0 2px var(--accent), 0 0 0 5px rgba(255,59,29,.18); }
+    .gallery-track { display: flex; align-items: stretch; width: 100%; transform: translate3d(0,0,0); transition: transform .62s cubic-bezier(.16,1,.3,1); will-change: transform; }
+    .gallery-slide { flex: 0 0 100%; min-width: 0; padding-inline: clamp(.15rem, 2vw, 1.2rem); }
+    .gallery-card, .gallery-empty { width: 100%; min-width: 0; }
+    .frame-art { position: relative; isolation: isolate; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background-color: var(--surface); border: 1px solid rgba(243,241,234,.12); box-shadow: 0 1.8rem 4rem rgba(0,0,0,.18); }
+    .frame-art::before { content: ""; position: absolute; z-index: -1; inset: 0; transition: transform .8s cubic-bezier(.16,1,.3,1), filter .6s ease; }
+    .gallery-card:hover .frame-art::before { transform: scale(1.04); filter: saturate(1.12); }
+    .art-one::before { background: linear-gradient(180deg, rgba(8,8,10,.05) 20%, rgba(8,8,10,.85) 100%), radial-gradient(ellipse at 49% 54%, rgba(255,103,52,.92) 0, rgba(204,68,39,.55) 13%, transparent 36%), linear-gradient(180deg, #4a2229 0%, #d07050 42%, #39252a 43%, #101014 100%); }
+    .art-one::after { content: ""; position: absolute; inset: 44% 0 0; z-index: -1; opacity: .42; background: repeating-linear-gradient(98deg, transparent 0 13%, rgba(8,8,10,.7) 13.1% 14.5%, transparent 14.6% 23%), linear-gradient(174deg, transparent 0 20%, #08080a 20.5%); clip-path: polygon(0 14%, 100% 0, 100% 100%, 0 100%); }
+    .art-two::before { background: linear-gradient(180deg, rgba(8,8,10,.04), rgba(8,8,10,.6)), radial-gradient(ellipse at 60% 64%, rgba(216,237,211,.67), transparent 11%), linear-gradient(180deg, #151b20 0%, #293a3d 54%, #101316 100%); }
+    .art-two::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .58; background: repeating-linear-gradient(90deg, transparent 0 13%, rgba(8,8,10,.8) 13.4% 14%, transparent 14.5% 29%), linear-gradient(90deg, transparent 31%, rgba(221,207,173,.22) 32%, transparent 34%); }
+    .art-three::before { background: linear-gradient(180deg, rgba(8,8,10,.02), rgba(8,8,10,.45)), radial-gradient(ellipse at 52% 42%, rgba(213,152,109,.88), transparent 18%), linear-gradient(180deg, #25262b 0%, #95715c 42%, #4d3935 43%, #141316 100%); }
+    .art-three::after { content: ""; position: absolute; inset: 42% -5% -15%; z-index: -1; opacity: .8; background: linear-gradient(174deg, transparent 0 23%, #111114 23.4%), repeating-linear-gradient(94deg, transparent 0 12%, rgba(10,10,11,.65) 12.3% 13.4%, transparent 13.7% 25%); }
+    .frame-grain { position: absolute; inset: 0; pointer-events: none; opacity: .12; background: repeating-linear-gradient(0deg, rgba(255,255,255,.09) 0 1px, transparent 1px 3px); mix-blend-mode: overlay; }
+    .frame-topline { position: absolute; inset: 1rem 1rem auto; display: flex; justify-content: space-between; color: rgba(243,241,234,.76); font-size: .58rem; letter-spacing: .17em; text-transform: uppercase; }
+    .frame-marker { position: absolute; left: 1rem; bottom: 1rem; display: flex; align-items: center; gap: .6rem; color: rgba(243,241,234,.8); font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; }
+    .frame-marker::before { content: ""; width: .42rem; height: .42rem; border-radius: 50%; background: var(--accent); }
+    .frame-marker.video-marker { top: 3rem; bottom: auto; }
+    .gallery-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .75s cubic-bezier(.16,1,.3,1); }
+    .gallery-image:not(video) { cursor: zoom-in; }
+    .gallery-video { cursor: pointer; }
+    .gallery-video { background: #08080a; }
+    .media-expand { position: absolute; z-index: 4; top: .85rem; right: .85rem; width: 2.8rem; height: 2.8rem; display: grid; place-items: center; border: 1px solid rgba(243,241,234,.5); background: rgba(8,8,10,.72); color: var(--foreground); font-size: 1.2rem; backdrop-filter: blur(8px); transition: background .2s ease, border-color .2s ease, color .2s ease; }
+    .media-expand:hover, .media-expand:focus-visible { border-color: var(--accent); background: var(--accent); color: var(--background); }
+    .gallery-card:hover .gallery-image { transform: scale(1.035); }
+    .gallery-caption { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+    .gallery-caption h3 { font-size: 1rem; font-weight: 500; letter-spacing: -.02em; transition: color .25s ease; }
+    .gallery-card:hover .gallery-caption h3 { color: var(--accent); }
+    .gallery-caption p, .gallery-caption span { margin-top: .3rem; color: var(--muted); font-size: .68rem; line-height: 1.5; }
+    .gallery-caption .frame-number { flex: 0 0 auto; color: var(--accent); text-align: right; }
+    .uploaded-card { animation: slide-in .55s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes slide-in { from { opacity: 0; transform: translateX(2rem); } to { opacity: 1; transform: translateX(0); } }
+    .gallery-empty { display: flex; min-height: 18rem; flex-direction: column; justify-content: center; align-items: flex-start; gap: .7rem; padding: clamp(1.4rem, 5vw, 4rem); border: 1px dashed var(--line-strong); color: var(--muted); background: linear-gradient(135deg, rgba(255,255,255,.025), transparent); }
+    .gallery-empty strong { color: var(--foreground); font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; text-transform: uppercase; }
+    .gallery-empty button { color: var(--accent); font-size: .76rem; }
+
+    .approach { padding-block: 0 var(--section); }
+    .approach-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+    .approach-head .section-title { max-width: 12ch; }
+    .approach-intro { max-width: 27rem; padding-bottom: .3rem; }
+    .approach-list { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .approach-item { min-height: 13rem; padding: 1.4rem 1.25rem 1.4rem 0; border-bottom: 1px solid var(--line); }
+    .approach-item + .approach-item { padding-left: 1.25rem; border-left: 1px solid var(--line); }
+    .approach-item .item-num { color: var(--accent); }
+    .approach-item h3 { margin-top: 3rem; font-size: 1.1rem; font-weight: 500; }
+    .approach-item p { max-width: 16rem; margin-top: .55rem; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+
+    .contact { position: relative; padding-top: var(--section); overflow: hidden; }
+    .contact::before { content: "NT"; position: absolute; right: -2.5vw; bottom: 7rem; color: rgba(243,241,234,.025); font-family: var(--font-display); font-size: 27vw; line-height: .8; pointer-events: none; }
+    .contact-title { max-width: 12ch; margin-top: 1.4rem; font-size: clamp(3.5rem, 8vw, 9.4rem); line-height: .84; }
+    .contact-copy { max-width: 35rem; margin-top: 1.5rem; color: var(--muted); font-size: 1rem; line-height: 1.7; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: .7rem 2.4rem; margin-top: 2.8rem; }
+    .contact-link { display: inline-flex; align-items: center; gap: .5rem; font-size: clamp(1rem, 2.1vw, 1.8rem); font-weight: 500; letter-spacing: -.035em; transition: transform .3s ease, color .3s ease; }
+    .contact-link:hover { color: var(--accent); transform: translateX(.55rem); }
+    .contact-link .arrow { color: var(--accent); font-size: .85em; }
+    .contact-social { display: inline-flex; align-items: center; gap: .65rem; margin-top: 1.6rem; color: var(--muted); font-size: .8rem; transition: color .25s ease; }
+    .contact-social:hover { color: var(--foreground); }
+    .contact-social::before { content: ""; width: 1.25rem; height: 1px; background: var(--accent); }
+    .footer-bar { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 2rem; margin-top: var(--section); padding-block: 1.5rem 2rem; border-top: 1px solid var(--line); }
+    .footer-signature { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 3.2rem); line-height: 1; text-transform: uppercase; }
+    .footer-note { margin-top: .6rem; color: var(--muted); }
+    .footer-right { display: flex; align-items: center; gap: 1.7rem; color: var(--muted); text-align: right; }
+    .footer-right a { transition: color .25s ease; }
+    .footer-right a:hover { color: var(--foreground); }
+    .admin-hint { position: fixed; left: .75rem; right: auto; bottom: .55rem; z-index: 7; padding: .25rem .4rem; color: rgba(243,241,234,.25); font-size: .48rem; letter-spacing: .08em; background: rgba(8,8,10,.55); opacity: .55; transition: opacity .25s ease; }
+    .admin-hint:hover { opacity: 1; }
+
+    .reveal { opacity: 0; transform: translateY(1.8rem); transition: opacity .62s cubic-bezier(.16,1,.3,1), transform .62s cubic-bezier(.16,1,.3,1); }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .reveal[data-delay="1"] { transition-delay: .09s; }
+    .reveal[data-delay="2"] { transition-delay: .18s; }
+    .reveal[data-delay="3"] { transition-delay: .27s; }
+    .heading-reveal { overflow: hidden; }
+    .heading-reveal > span { display: block; transform: translateY(110%); opacity: 0; transition: transform .88s cubic-bezier(.16,1,.3,1), opacity .5s ease; }
+    .heading-reveal.in-view > span { transform: translateY(0); opacity: 1; }
+    .heading-reveal.in-view > span:nth-child(2) { transition-delay: .09s; }
+
+    .editor-backdrop { position: fixed; inset: 0; z-index: 120; display: grid; place-items: center; padding: 1rem; background: rgba(0,0,0,.77); backdrop-filter: blur(12px); opacity: 0; visibility: hidden; transition: opacity .28s ease, visibility .28s ease; }
+    .editor-backdrop.open { opacity: 1; visibility: visible; }
+    .editor-panel { display: flex; flex-direction: column; width: min(48rem, 100%); max-height: min(90svh, 58rem); overflow: hidden; border: 1px solid var(--line-strong); background: #101013; box-shadow: 0 2rem 8rem rgba(0,0,0,.5); transform: translateY(1rem) scale(.985); transition: transform .32s cubic-bezier(.16,1,.3,1); }
+    .editor-backdrop.open .editor-panel { transform: translateY(0) scale(1); }
+    .editor-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1.5rem 1.7rem; border-bottom: 1px solid var(--line); }
+    .editor-head h2 { margin-top: .4rem; font-family: var(--font-display); font-size: 2.25rem; font-weight: 400; text-transform: uppercase; }
+    .editor-close { width: 2.1rem; height: 2.1rem; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--muted); font-size: 1.2rem; }
+    .editor-close:hover { color: var(--foreground); border-color: var(--accent); }
+    .editor-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 1.7rem; overscroll-behavior: contain; }
+    .unlock-form { max-width: 23rem; margin: 0 auto; padding-block: 1.5rem 2rem; text-align: center; }
+    .unlock-symbol { width: 3rem; height: 3rem; display: grid; place-items: center; margin: 0 auto 1rem; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--accent); }
+    .unlock-form h3 { font-size: 1.05rem; font-weight: 500; }
+    .unlock-form p, .editor-small { margin-top: .65rem; color: var(--muted); font-size: .82rem; line-height: 1.65; }
+    .unlock-form input { width: 100%; height: 2.9rem; margin-top: 1.2rem; padding: 0 .85rem; border: 1px solid var(--line-strong); outline: 0; background: #09090b; color: var(--foreground); text-align: center; letter-spacing: .18em; }
+    .unlock-form input:focus { border-color: var(--accent); }
+    .editor-button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; padding: .75rem 1.15rem; background: var(--accent); color: var(--background); font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; transition: background .2s ease, color .2s ease; }
+    .editor-button:hover { background: var(--foreground); }
+    .unlock-form .editor-button { width: 100%; margin-top: .65rem; }
+    .unlock-error { min-height: 1.15rem; margin-top: .55rem; color: var(--accent-2) !important; }
+    .editor-content[hidden], .unlock-form[hidden] { display: none; }
+    .editor-tabs { display: flex; gap: .65rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--line); }
+    .editor-tab { padding: .7rem .95rem; color: var(--muted); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; }
+    .editor-tab.active { color: var(--foreground); box-shadow: inset 0 -1px var(--accent); }
+    .editor-pane { padding-top: 1.35rem; }
+    .editor-pane[hidden] { display: none; }
+    .drop-zone { display: flex; min-height: 10rem; flex-direction: column; align-items: center; justify-content: center; gap: .65rem; padding: 1.35rem; border: 1px dashed var(--line-strong); background: rgba(255,255,255,.015); text-align: center; transition: border-color .2s ease, background .2s ease; }
+    .drop-zone.drag-over { border-color: var(--accent); background: rgba(255,59,29,.06); }
+    .drop-zone .upload-icon { color: var(--accent); font-size: 1.3rem; }
+    .drop-zone strong { font-size: .94rem; font-weight: 500; }
+    .drop-zone span { color: var(--muted); font-size: .78rem; line-height: 1.55; }
+    .file-input { position: absolute; width: 1px; height: 1px; clip: rect(0 0 0 0); overflow: hidden; }
+    .editor-footer { flex: 0 0 auto; display: flex; justify-content: space-between; align-items: center; gap: .9rem; padding: .9rem 1.7rem; border-top: 1px solid var(--line); background: #101013; }
+    .editor-footer[hidden] { display: none; }
+    .editor-footer .editor-button { min-height: 3rem; }
+    .editor-tools { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .9rem; margin-top: 1rem; }
+    .editor-count { color: var(--muted); font-size: .8rem; }
+    .manager-list { display: grid; gap: .85rem; max-height: min(42svh, 30rem); overflow-y: auto; overscroll-behavior: contain; padding: .15rem .4rem .15rem 0; margin-top: 1rem; scrollbar-color: var(--line-strong) transparent; scrollbar-width: thin; }
+    .manager-row { display: grid; grid-template-columns: 5rem minmax(0,1fr) auto; align-items: center; gap: 1rem; padding: .9rem; border: 1px solid var(--line); background: rgba(255,255,255,.018); }
+    .manager-fields { min-width: 0; }
+    .manager-field-label { display: block; margin-top: .6rem; color: var(--muted); font-size: .7rem; }
+    .manager-field { width: 100%; min-height: 2.65rem; margin-top: .28rem; padding: .65rem .75rem; border: 1px solid var(--line-strong); border-radius: 0; outline: 0; background: #09090b; color: var(--foreground); font-size: .85rem; line-height: 1.4; }
+    .manager-field:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255,59,29,.14); }
+    .manager-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .45rem; }
+    .manager-action { min-height: 2.35rem; padding: .5rem .65rem; border: 1px solid var(--line); color: var(--muted); font-size: .72rem; }
+    .manager-action:hover:not(:disabled), .manager-action:focus-visible:not(:disabled) { border-color: var(--accent); color: var(--foreground); }
+    .manager-action:disabled { opacity: .3; cursor: not-allowed; }
+    .manager-row img, .manager-row video { width: 5rem; height: 3.7rem; object-fit: cover; background: var(--surface); }
+    .manager-row span { display: block; margin-top: .3rem; color: var(--muted); font-size: .72rem; }
+    .remove-photo { padding: .4rem .5rem; color: var(--muted); font-size: .66rem; }
+    .remove-photo:hover { color: var(--accent); }
+    .migration-card { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin-top: .9rem; padding: .75rem; border: 1px solid rgba(255,106,61,.35); background: rgba(255,106,61,.05); }
+    .migration-card[hidden] { display: none; }
+    .migration-card p { color: var(--muted); font-size: .68rem; line-height: 1.45; }
+    .editor-status { min-height: 1.15rem; margin-top: .7rem; color: var(--muted); font-size: .7rem; }
+    .media-lightbox { position: fixed; inset: 0; z-index: 180; display: grid; grid-template-rows: 1fr auto; place-items: center; gap: 1rem; padding: 3.5rem 1.2rem 1.4rem; background: rgba(5,5,7,.97); opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s ease; }
+    .media-lightbox.open { opacity: 1; visibility: visible; }
+    .media-lightbox[hidden] { display: none; }
+    .media-lightbox-stage { width: 100%; height: 100%; min-height: 0; display: grid; place-items: center; }
+    .media-lightbox-stage img, .media-lightbox-stage video { display: block; max-width: min(96vw, 1800px); max-height: calc(100svh - 7rem); width: auto; height: auto; object-fit: contain; box-shadow: 0 1rem 5rem rgba(0,0,0,.55); }
+    .media-lightbox-stage video { width: min(96vw, 1500px); max-height: calc(100svh - 7rem); background: #000; }
+    .media-lightbox-close { position: absolute; top: max(1rem, env(safe-area-inset-top)); right: max(1rem, env(safe-area-inset-right)); z-index: 2; width: 3rem; height: 3rem; border: 1px solid rgba(243,241,234,.45); background: rgba(12,12,14,.85); color: var(--foreground); font-size: 1.5rem; }
+    .media-lightbox-close:hover, .media-lightbox-close:focus-visible { border-color: var(--accent); color: var(--accent); }
+    .media-lightbox-caption { max-width: min(90vw, 58rem); color: var(--foreground); font-size: .95rem; line-height: 1.5; text-align: center; }
+    .media-lightbox-caption span { display: block; margin-top: .25rem; color: var(--muted); font-size: .8rem; }
+    .hero-preview { width: min(14rem, 100%); height: 12rem; margin: .9rem auto; border: 1px solid var(--line); background: linear-gradient(145deg,#202024,#0a0a0c); object-fit: cover; object-position: center 25%; }
+    .hero-preview.empty { display: grid; place-items: center; color: var(--muted); font-size: .7rem; }
+    .toast { position: fixed; left: 50%; bottom: 1.5rem; z-index: 130; padding: .7rem 1rem; border: 1px solid var(--line-strong); background: #17171b; color: var(--foreground); font-size: .75rem; opacity: 0; transform: translate(-50%, .8rem); pointer-events: none; transition: opacity .25s ease, transform .25s ease; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (min-width: 1921px) { .hero-name { font-size: 22rem; } }
+    @media (max-width: 1024px) {
+      .story { gap: 3rem; }
+      .hero-portrait { width: 42vw; height: 66svh; }
+      .approach-list { grid-template-columns: repeat(2, 1fr); }
+      .approach-item:nth-child(3) { padding-left: 0; border-left: 0; }
+      .approach-item h3 { margin-top: 2.2rem; }
+    }
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: flex; }
+      .hero { min-height: 94svh; }
+      .hero-top { flex-direction: column; gap: 1.4rem; padding-top: 6.8rem; }
+      .hero-role { font-size: 1.12rem; }
+      .hero-intro { max-width: 17rem; padding-top: 0; text-align: left; font-size: .8rem; }
+      .hero-name { bottom: .5rem; font-size: clamp(4.6rem, 17.5vw, 8rem); }
+      .hero-portrait { width: 59vw; height: 58svh; }
+      .portrait-placeholder { width: 72%; height: 77%; }
+      .hero-index { display: none; }
+      .story { grid-template-columns: 1fr; gap: 2.6rem; }
+      .story-heading { max-width: 12ch; }
+      .principles { padding-top: 0; }
+      .work-head { align-items: flex-start; flex-direction: column; gap: 1.2rem; }
+      .work-side { max-width: 25rem; text-align: left; }
+      .gallery-slide { padding-inline: 0; }
+      .gallery-empty { min-height: 15rem; }
+      .approach-head { align-items: flex-start; flex-direction: column; gap: 1rem; }
+      .approach-intro { max-width: 32rem; }
+      .contact-title { max-width: 10ch; }
+      .footer-bar { grid-template-columns: 1fr; align-items: start; }
+      .footer-right { justify-content: space-between; text-align: left; }
+    }
+    @media (max-width: 480px) {
+      .gallery-toolbar { flex-wrap: wrap; gap: .65rem; }
+      .gallery-add-button { right: max(.75rem, env(safe-area-inset-right)); bottom: max(.9rem, env(safe-area-inset-bottom)); min-height: 3.1rem; }
+      .preloader { flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: .55rem; }
+      .preloader-label { font-size: 1.8rem; }
+      .preloader-count { font-size: 4.5rem; }
+      .brand-name { font-size: .58rem; }
+      .hero { min-height: 90svh; }
+      .hero-top { padding-top: 6rem; }
+      .hero-portrait { width: 66vw; height: 53svh; }
+      .hero-name { font-size: clamp(4rem, 17.8vw, 6.3rem); }
+      .hero-bottom { bottom: 1rem; }
+      .scroll-cue { font-size: .57rem; }
+      .scroll-cue::before { height: 1.8rem; }
+      .section-title, .work-title { font-size: 2.8rem; }
+      .approach-list { grid-template-columns: 1fr 1fr; }
+      .approach-item { min-height: 12rem; padding-right: .7rem; }
+      .approach-item + .approach-item { padding-left: .75rem; }
+      .approach-item:nth-child(3) { padding-left: 0; border-left: 0; }
+      .approach-item h3 { margin-top: 1.7rem; font-size: .95rem; }
+      .approach-item p { font-size: .72rem; }
+      .contact-link { font-size: 1rem; }
+      .editor-body { padding: 1rem; }
+      .editor-head { padding: 1rem; }
+      .manager-row { grid-template-columns: 3.8rem minmax(0,1fr); gap: .75rem; }
+      .manager-row img, .manager-row video { width: 3.8rem; height: 3rem; }
+      .manager-actions { grid-column: 1 / -1; justify-content: flex-start; }
+      .manager-field { font-size: .9rem; }
+      .manager-row { grid-template-columns: 3rem 1fr auto; gap: .55rem; }
+      .manager-row img { width: 3rem; height: 2.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .preloader { display: none; }
+      .marquee-track { animation: none; }
+      .hero-light-sweep, .ambient-canvas { display: none !important; }
+      .gallery-track { transition: none; }
+      .reveal, .heading-reveal > span { opacity: 1; transform: none; }
+      .hero-role b, .hero-name i, .hero-intro, .scroll-cue, .hero-index { opacity: 1; transform: none; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preloader" id="preloader" aria-hidden="false">
+    <p class="preloader-label">Nishant Tiwari</p>
+    <p class="preloader-count"><span id="loadCount">00</span><span>%</span></p>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Nishant Tiwari, home">
+        <span class="brand-mark">NT</span>
+        <span class="brand-name eyebrow">Nishant Tiwari</span>
+      </a>
+      <ul class="nav-links eyebrow">
+        <li><a href="#story">Approach</a></li>
+        <li><a href="#work">Frames</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+      <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#story">Approach</a><a href="#work">Frames</a><a href="#services">Services</a><a href="#contact">Contact</a>
+        <p class="mobile-menu-note eyebrow">Nishant Tiwari · Film · Reels · Editing</p>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <canvas class="ambient-canvas" id="ambientCanvas" aria-hidden="true"></canvas>
+      <div class="hero-light-sweep" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-top">
+        <h2 class="hero-role display" aria-label="Cinematographer, video editor, scriptwriter and reel shooter">
+          <span><b>Cinematographer</b></span>
+          <span><b>Video editor</b></span>
+          <span><b>Scriptwriter</b></span>
+          <span><b>Reel shooter</b></span>
+        </h2>
+        <p class="hero-intro">From the first line on the page to the final cut — scripts, shoots, edits and promotional reels, shaped around your story.</p>
+      </div>
+      <h1 class="hero-name display" id="heroTitle"><span class="name-first"><i>Nishant</i></span><span class="name-second"><i>Tiwari</i></span></h1>
+      <figure class="hero-portrait" id="heroPortraitFrame" aria-label="Nishant Tiwari photographing by the sea">
+        <img class="portrait-image" id="heroPortraitImage" alt="Nishant Tiwari photographing on a rocky shoreline with a camera" hidden>
+        <div class="portrait-placeholder" id="portraitPlaceholder" aria-hidden="true"><span class="target">✳</span><span class="portrait-note eyebrow">Portrait ready</span></div>
+      </figure>
+      <div class="hero-base" aria-hidden="true"></div>
+      <div class="hero-bottom">
+        <a class="scroll-cue eyebrow" href="#story">Scroll to explore</a>
+        <p class="hero-index eyebrow"><strong>Film · reels · branded stories</strong>Available for creative collaborations</p>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Light, motion, meaning and story">
+      <div class="marquee-track" aria-hidden="true">
+        <div class="marquee-group"><span class="marquee-word">Script with purpose</span><i class="marquee-dot"></i><span class="marquee-word">Shoot with feeling</span><i class="marquee-dot"></i><span class="marquee-word">Edit with rhythm</span><i class="marquee-dot"></i><span class="marquee-word">Create for the scroll</span><i class="marquee-dot"></i></div>
+        <div class="marquee-group"><span class="marquee-word">Script with purpose</span><i class="marquee-dot"></i><span class="marquee-word">Shoot with feeling</span><i class="marquee-dot"></i><span class="marquee-word">Edit with rhythm</span><i class="marquee-dot"></i><span class="marquee-word">Create for the scroll</span><i class="marquee-dot"></i></div>
+      </div>
+    </section>
+
+    <section class="story section-wrap" id="story">
+      <div>
+        <p class="eyebrow eyebrow-mark reveal">The approach</p>
+        <h2 class="story-heading display heading-reveal"><span>Seeing is</span><span>only the</span><span>beginning.</span></h2>
+        <p class="story-copy reveal">From shaping an idea and writing a script to shooting on location and editing the final cut, each step serves the story. The work can take the shape of a film, a social reel, or a promotional video — always with a clear purpose and a visual style that fits.</p>
+      </div>
+      <ul class="principles">
+        <li class="principle reveal"><span class="principle-num">01</span><div><h3>Light with intention</h3><p>Shape the atmosphere before the audience knows why it feels different.</p></div></li>
+        <li class="principle reveal" data-delay="1"><span class="principle-num">02</span><div><h3>Movement that means something</h3><p>Let the camera move only when the story has somewhere to go.</p></div></li>
+        <li class="principle reveal" data-delay="2"><span class="principle-num">03</span><div><h3>Leave room for feeling</h3><p>Build a visual language that gives a moment space to land.</p></div></li>
+      </ul>
+    </section>
+
+    <section class="work section-wrap" id="work">
+      <div class="work-head reveal">
+        <div><p class="eyebrow eyebrow-mark">A living gallery</p><h2 class="work-title display">A frame at a time.</h2></div>
+        <p class="work-side"><b>Sample studies · Add original work</b>These graphic studies are placeholders. Add Nishant’s reels, film frames and promotional work with the gallery key.</p>
+      </div>
+      <div class="gallery-toolbar" aria-label="Gallery navigation">
+        <span class="gallery-position eyebrow" id="galleryPosition" aria-live="polite">00 / 00</span>
+        <button class="gallery-add-button" id="publicAddMedia" type="button" aria-label="Open owner tools to add photos or videos">＋ Add photos / videos</button>
+        <div class="gallery-controls">
+          <button class="gallery-control" id="galleryPrev" type="button" aria-label="Previous gallery item" disabled>←</button>
+          <button class="gallery-control" id="galleryNext" type="button" aria-label="Next gallery item" disabled>→</button>
+        </div>
+      </div>
+      <div class="gallery-viewport" id="galleryGrid" role="region" aria-label="Gallery slideshow. Use the previous and next buttons, arrow keys, or swipe." tabindex="0">
+        <div class="gallery-track" id="galleryTrack"></div>
+      </div>
+    </section>
+
+    <section class="approach section-wrap" id="services">
+      <div class="approach-head reveal">
+        <div><p class="eyebrow eyebrow-mark">Services</p><h2 class="section-title display">From first line to final frame.</h2></div>
+        <p class="approach-intro section-copy">A connected creative service from script and shoot through the final edit — including short-form reels, promotional videos, and more.</p>
+      </div>
+      <ul class="approach-list">
+        <li class="approach-item reveal"><span class="item-num eyebrow">01 / Write</span><h3>Scriptwriting</h3><p>Concepts, hooks and scripts for short videos, reels and promotions.</p></li>
+        <li class="approach-item reveal" data-delay="1"><span class="item-num eyebrow">02 / Shoot</span><h3>Cinematography & reel shoots</h3><p>Camera, composition and on-location shooting for films and social-first video.</p></li>
+        <li class="approach-item reveal" data-delay="2"><span class="item-num eyebrow">03 / Edit</span><h3>Video editing</h3><p>Thoughtful pacing and polished cuts, shaped for the story and the platform.</p></li>
+        <li class="approach-item reveal" data-delay="3"><span class="item-num eyebrow">04 / Promote</span><h3>Promotional reels & videos</h3><p>Brand promos, event highlights, social cutdowns and other made-to-share content.</p></li>
+      </ul>
+    </section>
+
+    <footer class="contact section-wrap" id="contact">
+      <div class="reveal">
+        <p class="eyebrow eyebrow-mark">Let’s make something</p>
+        <h2 class="contact-title display heading-reveal"><span>Have a story</span><span>worth seeing?</span></h2>
+        <p class="contact-copy">Need a script, a reel shoot, a clean edit, or a promotional video? Get in touch and let’s shape the idea into something people want to watch.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:buntytiwaritiwari489@gmail.com">buntytiwaritiwari489@gmail.com <span class="arrow">↗</span></a>
+          <a class="contact-link" href="tel:+918237882315">82378 82315 <span class="arrow">↗</span></a>
+        </div>
+        <a class="contact-social eyebrow" href="https://www.instagram.com/nishant6.28?rpxt=MXJ6YTdoNzk1czBhNQ==" target="_blank" rel="noreferrer noopener">Instagram · @nishant6.28 <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="footer-bar">
+        <div><p class="footer-signature">Nishant Tiwari</p><p class="footer-note eyebrow">Cinematography · Scripts · Editing · Reels.</p></div>
+        <div class="footer-right eyebrow"><a href="#top">Back to top ↑</a><span>© <span id="year"></span> Nishant Tiwari</span></div>
+      </div>
+    </footer>
+  </main>
+
+  <button class="admin-hint eyebrow" id="adminHint" type="button" aria-label="Open photo shelf">Photo shelf · Alt + Shift + G</button>
+
+  <div class="editor-backdrop" id="editorBackdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+    <section class="editor-panel">
+      <div class="editor-head"><div><p class="eyebrow eyebrow-mark">Owner tools</p><h2 id="editorTitle">Photo shelf</h2></div><button class="editor-close" id="editorClose" type="button" aria-label="Close photo editor">×</button></div>
+      <div class="editor-body">
+        <form class="unlock-form" id="unlockForm">
+          <span class="unlock-symbol" aria-hidden="true">⌁</span>
+          <h3>Owner tools are locked</h3>
+          <p>Enter the owner key to manage the shared gallery and hero image. The key stays in memory only while this editor is open.</p>
+          <input id="galleryKey" type="password" autocomplete="off" placeholder="OWNER KEY" aria-label="Owner key" required>
+          <button class="editor-button" type="submit">Verify owner key</button>
+          <p class="unlock-error" id="unlockError" aria-live="polite"></p>
+          <p class="editor-small">No key is embedded in this page. If you are the owner and have not configured it yet, ask the site administrator.</p>
+        </form>
+        <div class="editor-content" id="editorContent" hidden>
+          <div class="editor-tabs" role="tablist" aria-label="Photo editor sections">
+            <button class="editor-tab active" type="button" role="tab" aria-selected="true" data-tab="galleryPane">Gallery media</button>
+            <button class="editor-tab" type="button" role="tab" aria-selected="false" data-tab="portraitPane">Hero portrait</button>
+          </div>
+          <div class="editor-pane" id="galleryPane" role="tabpanel">
+            <label class="drop-zone" id="galleryDropZone" for="galleryUpload"><span class="upload-icon" aria-hidden="true">＋</span><strong>Drop photos or videos here, or choose files</strong><span>Photos: JPG/JPEG, PNG, WebP, GIF, BMP or AVIF · Videos: MP4/M4V, WebM or MOV · multiple files are sent in batches</span></label>
+            <input class="file-input" id="galleryUpload" type="file" accept=".jpg,.jpeg,.png,.webp,.gif,.bmp,.avif,image/jpeg,image/png,image/webp,image/gif,image/bmp,image/avif,.mp4,.m4v,.webm,.mov,video/mp4,video/x-m4v,video/webm,video/quicktime" multiple>
+            <p class="editor-small">Images are converted to lightweight WebP before upload. Images: maximum 15 MB after optimization. Videos: MP4/M4V, WebM or MOV up to 80 MB. If your file is not listed, export it as JPG/PNG or MP4 first. The active video autoplays muted unless reduced motion is enabled.</p>
+            <div class="migration-card" id="migrationCard" hidden><p><strong>Local media found in this browser.</strong><br>Import earlier photo-shelf uploads; local copies are cleared only after the server confirms success.</p><button class="editor-button" id="migrateLegacy" type="button">Migrate saved media</button></div>
+            <p class="editor-status" id="editorStatus" aria-live="polite"></p>
+            <div class="manager-list" id="managerList"></div>
+          </div>
+          <div class="editor-pane" id="portraitPane" role="tabpanel" hidden>
+            <p class="editor-small">The supplied optimized portrait is the default. Replace or reset it for every visitor through the shared hero API.</p>
+            <div id="heroPreviewBox" class="hero-preview empty">Supplied portrait</div>
+            <div class="migration-card" id="heroMigrationCard" hidden><p><strong>Earlier local portrait found.</strong><br>Import it into shared storage before removing the browser-local copy.</p><button class="editor-button" id="migrateLegacyHero" type="button">Import local portrait</button></div>
+            <input class="file-input" id="heroUpload" type="file" accept=".jpg,.jpeg,.png,.webp,.gif,.bmp,.avif,image/jpeg,image/png,image/webp,image/gif,image/bmp,image/avif">
+            <div class="editor-tools"><span class="editor-count">Shared hero image · API managed</span><button class="editor-button" id="chooseHeroFile" type="button">Replace portrait</button></div>
+            <button class="remove-photo" id="removeHero" type="button" hidden>Restore supplied photo</button>
+          </div>
+        </div>
+      </div>
+      <div class="editor-footer" id="galleryEditorFooter" hidden><span class="editor-count" id="mediaCount">0 shared items</span><button class="editor-button" id="chooseGalleryFiles" type="button">＋ Add photos / videos</button></div>
+    </section>
+  </div>
+  <div class="media-lightbox" id="mediaLightbox" role="dialog" aria-modal="true" aria-label="Expanded gallery media" aria-hidden="true" hidden>
+    <button class="media-lightbox-close" id="mediaLightboxClose" type="button" aria-label="Close expanded media">×</button>
+    <div class="media-lightbox-stage" id="mediaLightboxStage"></div>
+    <p class="media-lightbox-caption" id="mediaLightboxCaption"></p>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    (() => {
+      "use strict";
+      const FONT_BASE = 16, BASE_W = 1920, COEF = .6666;
+      function applyAdaptiveGrid() {
+        const w = window.innerWidth;
+        const reduction = ((BASE_W - w) / BASE_W) * 100 * COEF;
+        const size = FONT_BASE - (FONT_BASE * reduction) / 100;
+        if (size > FONT_BASE) document.documentElement.style.fontSize = size + "px";
+        else document.documentElement.style.removeProperty("font-size");
+      }
+      applyAdaptiveGrid();
+      addEventListener("resize", applyAdaptiveGrid, { passive: true });
+
+      const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const preloader = document.getElementById("preloader");
+      const count = document.getElementById("loadCount");
+      function revealPage() {
+        document.body.classList.add("page-ready");
+        preloader?.classList.add("fade");
+        setTimeout(() => {
+          if (preloader) { preloader.classList.add("done"); preloader.setAttribute("aria-hidden", "true"); }
+          document.body.classList.remove("locked");
+        }, 500);
+      }
+      if (reduceMotion) {
+        preloader?.remove();
+        document.body.classList.add("page-ready");
+      } else {
+        document.body.classList.add("locked");
+        const start = performance.now();
+        const tick = (now) => {
+          const progress = Math.min((now - start) / 2000, 1);
+          if (count) count.textContent = String(Math.round(progress * 100)).padStart(2, "0");
+          if (progress < 1) requestAnimationFrame(tick);
+          else setTimeout(revealPage, 200);
+        };
+        requestAnimationFrame(tick);
+      }
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0 });
+      document.querySelectorAll(".reveal, .heading-reveal").forEach(el => revealObserver.observe(el));
+      if (reduceMotion) document.querySelectorAll(".reveal, .heading-reveal").forEach(el => el.classList.add("in-view"));
+
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      function closeMenu() {
+        menuToggle?.setAttribute("aria-expanded", "false");
+        menuToggle?.setAttribute("aria-label", "Open menu");
+        mobileMenu?.classList.remove("open");
+        mobileMenu?.setAttribute("aria-hidden", "true");
+      }
+      menuToggle?.addEventListener("click", () => {
+        const open = menuToggle.getAttribute("aria-expanded") !== "true";
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        mobileMenu.classList.toggle("open", open);
+        mobileMenu.setAttribute("aria-hidden", String(!open));
+      });
+      mobileMenu?.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const galleryGrid = document.getElementById("galleryGrid");
+      const galleryTrack = document.getElementById("galleryTrack");
+      const managerList = document.getElementById("managerList");
+      const editorBackdrop = document.getElementById("editorBackdrop");
+      const unlockForm = document.getElementById("unlockForm");
+      const editorContent = document.getElementById("editorContent");
+      const galleryEditorFooter = document.getElementById("galleryEditorFooter");
+      const mediaLightbox = document.getElementById("mediaLightbox");
+      const mediaLightboxStage = document.getElementById("mediaLightboxStage");
+      const mediaLightboxCaption = document.getElementById("mediaLightboxCaption");
+      const unlockError = document.getElementById("unlockError");
+      const DEFAULT_HERO_PORTRAIT = "/manus-storage/nishant-portrait_0d84d7c4.webp";
+      const MAX_VIDEO_BYTES = 80 * 1024 * 1024;
+      const MAX_IMAGE_BYTES = 15 * 1024 * 1024;
+      const MAX_BATCH_BYTES = 160 * 1024 * 1024;
+      const MAX_BATCH_FILES = 10;
+      const LEGACY_GALLERY_KEY = "nishant.gallery.v1";
+      const LEGACY_HERO_KEY = "nishant.hero-portrait.v1";
+      let galleryPhotos = [];
+      let galleryIndex = 0;
+      let ownerKey = "";
+      let heroPortraitData = DEFAULT_HERO_PORTRAIT;
+      let toastTimer;
+      let legacyRecords = [];
+      let legacyLocalRecords = [];
+      let legacyHeroData = "";
+      let mediaDbPromise = null;
+
+      function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
+      }
+      function setEditorStatus(message, isError = false) {
+        const status = document.getElementById("editorStatus");
+        if (status) { status.textContent = message; status.style.color = isError ? "var(--accent-2)" : ""; }
+      }
+      function authHeaders(extra = {}) {
+        return { ...extra, Authorization: "Bearer " + ownerKey };
+      }
+      async function apiRequest(url, options = {}) {
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          let detail = "Request failed (" + response.status + ")";
+          try { const body = await response.json(); if (body?.error) detail = body.error; } catch { /* non-JSON error */ }
+          throw new Error(detail);
+        }
+        if (response.status === 204) return null;
+        const type = response.headers.get("content-type") || "";
+        return type.includes("application/json") ? response.json() : null;
+      }
+      function normalizeItem(item) {
+        return { id: String(item.id), url: item.url || "", kind: item.kind === "video" ? "video" : "image", name: item.name || "Untitled frame", caption: item.caption || "", sortOrder: Number(item.sortOrder) || 0 };
+      }
+      async function loadGallery() {
+        try {
+          const result = await apiRequest("/api/gallery");
+          galleryPhotos = Array.isArray(result?.items) ? result.items.map(normalizeItem).sort((a, b) => a.sortOrder - b.sortOrder) : [];
+          galleryIndex = 0;
+          renderGallery();
+        } catch (error) {
+          galleryPhotos = [];
+          renderGallery();
+          showToast("The shared gallery is temporarily unavailable.");
+        }
+      }
+
+      function updateGalleryPosition() {
+        const total = galleryPhotos.length;
+        const position = document.getElementById("galleryPosition");
+        const prev = document.getElementById("galleryPrev");
+        const next = document.getElementById("galleryNext");
+        if (!total) { position.textContent = "00 / 00"; prev.disabled = true; next.disabled = true; return; }
+        galleryIndex = Math.max(0, Math.min(galleryIndex, total - 1));
+        position.textContent = String(galleryIndex + 1).padStart(2, "0") + " / " + String(total).padStart(2, "0");
+        prev.disabled = galleryIndex === 0;
+        next.disabled = galleryIndex === total - 1;
+      }
+      function slideTo(index, immediate = false) {
+        if (!galleryPhotos.length) { galleryIndex = 0; galleryTrack.style.transform = "translate3d(0,0,0)"; updateGalleryPosition(); syncActiveVideo(); return; }
+        galleryIndex = Math.max(0, Math.min(index, galleryPhotos.length - 1));
+        galleryTrack.style.transition = immediate || reduceMotion ? "none" : "";
+        galleryTrack.style.transform = "translate3d(-" + (galleryIndex * 100) + "%,0,0)";
+        updateGalleryPosition();
+        syncActiveVideo();
+        if (immediate || reduceMotion) requestAnimationFrame(() => { galleryTrack.style.transition = ""; });
+      }
+      function slideGallery(direction) { slideTo(galleryIndex + direction); }
+      function syncActiveVideo() {
+        Array.from(galleryTrack.children).forEach((slide, index) => {
+          const video = slide.querySelector("video");
+          if (!video) return;
+          const active = index === galleryIndex && !document.hidden;
+          if (!active) {
+            video.pause(); video.autoplay = false; video.preload = "none";
+            if (video.hasAttribute("src")) { video.removeAttribute("src"); video.load(); }
+            return;
+          }
+          video.muted = true; video.defaultMuted = true; video.playsInline = true; video.loop = true;
+          video.preload = "auto"; video.autoplay = !reduceMotion;
+          if (!video.hasAttribute("src")) { video.src = video.dataset.source || ""; video.load(); }
+          if (reduceMotion) { video.pause(); return; }
+          const playback = video.play(); if (playback && typeof playback.catch === "function") playback.catch(() => {});
+        });
+      }
+      function createGallerySlide(photo, index) {
+        const slide = document.createElement("div");
+        slide.className = "gallery-slide" + (photo._enter ? " uploaded-card" : "");
+        if (photo._enter) slide.addEventListener("animationend", event => { if (event.target === slide) slide.classList.remove("uploaded-card"); }, { once: true });
+        const article = document.createElement("article");
+        article.className = "gallery-card";
+        const figure = document.createElement("figure");
+        figure.className = "frame-art";
+        const isVideo = photo.kind === "video";
+        const media = document.createElement(isVideo ? "video" : "img");
+        media.className = isVideo ? "gallery-image gallery-video" : "gallery-image";
+        if (isVideo) {
+          media.controls = true; media.playsInline = true; media.preload = "none"; media.muted = true; media.loop = true; media.dataset.source = photo.url;
+          media.setAttribute("aria-label", (photo.name || "Uploaded video") + (reduceMotion ? ", use controls to play" : ", autoplays muted; use controls to pause or unmute"));
+        } else {
+          media.src = photo.url;
+          media.alt = photo.name || "Cinematography frame uploaded by Nishant"; media.loading = "lazy"; media.decoding = "async";
+          media.addEventListener("click", () => openMediaViewer(photo));
+        }
+        const expand = document.createElement("button"); expand.type = "button"; expand.className = "media-expand"; expand.textContent = "⛶"; expand.setAttribute("aria-label", "View " + (photo.name || (isVideo ? "video" : "photo")) + " full screen"); expand.title = "View full screen"; expand.addEventListener("click", () => openMediaViewer(photo));
+        const top = document.createElement("span"); top.className = "frame-topline";
+        const label = document.createElement("span"); label.textContent = "Nishant · " + (isVideo ? "video" : "photo");
+        const seq = document.createElement("span"); seq.textContent = String(index + 1).padStart(2, "0") + " / " + String(galleryPhotos.length).padStart(2, "0");
+        top.append(label, seq);
+        const marker = document.createElement("span"); marker.className = "frame-marker" + (isVideo ? " video-marker" : ""); marker.textContent = isVideo ? (reduceMotion ? "Motion · manual" : "Auto · muted") : "Frame · still";
+        const grain = document.createElement("span"); grain.className = "frame-grain";
+        figure.append(media, top, marker, expand, grain);
+        const caption = document.createElement("div"); caption.className = "gallery-caption";
+        const text = document.createElement("div");
+        const heading = document.createElement("h3"); heading.textContent = photo.name || "Untitled frame";
+        const sub = document.createElement("p"); sub.textContent = photo.caption || (isVideo ? "Video · shared gallery" : "Photo · shared gallery");
+        text.append(heading, sub);
+        const number = document.createElement("span"); number.className = "frame-number eyebrow"; number.textContent = String(index + 1).padStart(2, "0");
+        caption.append(text, number); article.append(figure, caption); slide.appendChild(article);
+        return slide;
+      }
+      function openMediaViewer(photo) {
+        if (!photo) return;
+        mediaLightboxStage.replaceChildren();
+        const isVideo = photo.kind === "video";
+        const media = document.createElement(isVideo ? "video" : "img");
+        if (isVideo) {
+          document.querySelectorAll(".gallery-video").forEach(video => video.pause());
+          media.controls = true; media.playsInline = true; media.preload = "auto"; media.loop = true; media.muted = true; media.autoplay = !reduceMotion; media.src = photo.url;
+          if (!reduceMotion) { const playback = media.play(); if (playback?.catch) playback.catch(() => {}); }
+        } else {
+          media.src = photo.url; media.alt = photo.name || "Expanded cinematography frame"; media.decoding = "async";
+        }
+        mediaLightboxStage.appendChild(media);
+        mediaLightboxCaption.replaceChildren();
+        mediaLightboxCaption.append(document.createTextNode(photo.name || (isVideo ? "Video" : "Photo")));
+        if (photo.caption) { const caption = document.createElement("span"); caption.textContent = photo.caption; mediaLightboxCaption.appendChild(caption); }
+        mediaLightbox.hidden = false; mediaLightbox.setAttribute("aria-hidden", "false"); document.body.classList.add("locked");
+        requestAnimationFrame(() => mediaLightbox.classList.add("open"));
+        document.getElementById("mediaLightboxClose").focus();
+      }
+      function closeMediaViewer() {
+        if (mediaLightbox.hidden) return;
+        mediaLightbox.classList.remove("open"); mediaLightbox.setAttribute("aria-hidden", "true");
+        setTimeout(() => { mediaLightbox.hidden = true; mediaLightboxStage.replaceChildren(); }, reduceMotion ? 0 : 220);
+        if (!editorBackdrop.classList.contains("open")) document.body.classList.remove("locked");
+        syncActiveVideo();
+      }
+      function renderGallery() {
+        galleryTrack.replaceChildren();
+        if (!galleryPhotos.length) {
+          const slide = document.createElement("div"); slide.className = "gallery-slide";
+          const empty = document.createElement("article"); empty.className = "gallery-empty";
+          const title = document.createElement("strong"); title.textContent = "Your next frame goes here.";
+          const note = document.createElement("span"); note.className = "eyebrow"; note.textContent = "Add photos or videos with the owner tools.";
+          const button = document.createElement("button"); button.type = "button"; button.id = "openEditorButton"; button.textContent = "Open media shelf ↗"; button.addEventListener("click", openEditor);
+          empty.append(title, note, button); slide.appendChild(empty); galleryTrack.appendChild(slide);
+          galleryIndex = 0; galleryTrack.style.transform = "translate3d(0,0,0)";
+        } else galleryPhotos.forEach((photo, index) => galleryTrack.appendChild(createGallerySlide(photo, index)));
+        slideTo(galleryIndex, true);
+        renderManager();
+      }
+
+      function openMediaDatabase() {
+        if (!window.indexedDB) return Promise.resolve(null);
+        return new Promise((resolve, reject) => {
+          const request = indexedDB.open("nishant-media-library", 1);
+          request.onupgradeneeded = () => { if (!request.result.objectStoreNames.contains("gallery")) request.result.createObjectStore("gallery", { keyPath: "id" }); };
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = () => reject(request.error || new Error("Could not open saved media."));
+        });
+      }
+      function getMediaDb() {
+        if (!mediaDbPromise) mediaDbPromise = openMediaDatabase().catch(() => null);
+        return mediaDbPromise;
+      }
+      async function readMediaRecords() {
+        const db = await getMediaDb();
+        if (!db) return [];
+        return new Promise((resolve, reject) => {
+          const request = db.transaction("gallery", "readonly").objectStore("gallery").getAll();
+          request.onsuccess = () => resolve(request.result || []);
+          request.onerror = () => reject(request.error || new Error("Could not read saved media."));
+        });
+      }
+      async function deleteMediaRecord(id) {
+        const db = await getMediaDb();
+        if (!db) return;
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction("gallery", "readwrite");
+          transaction.objectStore("gallery").delete(id);
+          transaction.oncomplete = resolve;
+          transaction.onerror = () => reject(transaction.error || new Error("Could not clear saved media."));
+          transaction.onabort = () => reject(transaction.error || new Error("Could not clear saved media."));
+        });
+      }
+      async function inspectLegacyMedia() {
+        const records = await readMediaRecords().catch(() => []);
+        legacyRecords = records.filter(item => item && item.blob instanceof Blob);
+        try {
+          const saved = JSON.parse(localStorage.getItem(LEGACY_GALLERY_KEY) || "[]");
+          legacyLocalRecords = Array.isArray(saved) ? saved.map((item, index) => ({ ...item, legacyKey: String(item?.id || "legacy-local-" + index) })).filter(item => typeof item.data === "string" && item.data.startsWith("data:image/")) : [];
+        } catch { legacyLocalRecords = []; }
+        try { legacyHeroData = localStorage.getItem(LEGACY_HERO_KEY) || ""; } catch { legacyHeroData = ""; }
+        const total = legacyRecords.length + legacyLocalRecords.length;
+        const card = document.getElementById("migrationCard");
+        const count = card?.querySelector("strong");
+        if (card) card.hidden = total === 0;
+        if (count) count.textContent = total + (total === 1 ? " saved item" : " saved items") + " found in this browser.";
+        const heroCard = document.getElementById("heroMigrationCard");
+        if (heroCard) heroCard.hidden = !legacyHeroData;
+      }
+      async function prepareLegacyBlob(blob, name, declaredType) {
+        const type = String(declaredType || blob.type || "").toLowerCase();
+        if (type.startsWith("image/")) {
+          const optimized = type === "image/webp" ? blob : await compressImage(new File([blob], name || "saved-image", { type }), 1600);
+          if (optimized.size > MAX_IMAGE_BYTES) throw new Error("An older image is larger than the 15 MB upload limit after optimization.");
+          return optimized;
+        }
+        if (["video/mp4", "video/webm", "video/quicktime"].includes(type) && blob.size <= MAX_VIDEO_BYTES) return blob;
+        throw new Error("An older media item uses an unsupported format or exceeds the video size limit.");
+      }
+      function makeUploadBatches(entries) {
+        const batches = []; let current = []; let bytes = 0;
+        entries.forEach(entry => {
+          if (entry.blob.size > MAX_BATCH_BYTES) throw new Error("One file is larger than the upload limit.");
+          if (current.length && (current.length >= MAX_BATCH_FILES || bytes + entry.blob.size > MAX_BATCH_BYTES)) { batches.push(current); current = []; bytes = 0; }
+          current.push(entry); bytes += entry.blob.size;
+        });
+        if (current.length) batches.push(current);
+        return batches;
+      }
+      async function uploadMediaBatches(entries, onProgress = () => {}, onBatchSuccess = async () => {}) {
+        const batches = makeUploadBatches(entries); const uploaded = [];
+        for (let index = 0; index < batches.length; index += 1) {
+          const batch = batches[index]; const form = new FormData();
+          batch.forEach(entry => form.append("files", entry.blob, entry.name || "saved-media"));
+          try {
+            const result = await apiRequest("/api/gallery", { method: "POST", headers: authHeaders(), body: form });
+            if (!Array.isArray(result?.items) || result.items.length !== batch.length) throw new Error("The server did not confirm every file in this batch.");
+            const added = result.items.map(normalizeItem); uploaded.push(...added);
+            await onBatchSuccess(batch, added);
+            onProgress(index + 1, batches.length, added.length);
+          } catch (error) { error.uploaded = uploaded; error.message = "Batch " + (index + 1) + " failed for " + batch.slice(0, 3).map(entry => entry.name).join(", ") + (batch.length > 3 ? " and " + (batch.length - 3) + " more" : "") + ": " + (error.message || "server upload error"); throw error; }
+        }
+        return uploaded;
+      }
+      async function migrateLegacyMedia() {
+        if (!legacyRecords.length && !legacyLocalRecords.length) return;
+        const button = document.getElementById("migrateLegacy"); button.disabled = true; setEditorStatus("Preparing saved browser media…");
+        try {
+          const entries = [];
+          for (const record of legacyRecords) {
+            const name = record.name || "saved-media";
+            const blob = await prepareLegacyBlob(record.blob, name, record.mimeType || record.blob.type);
+            entries.push({ blob, name, legacySource: "indexedDB", legacyId: record.id });
+          }
+          for (const record of legacyLocalRecords) {
+            const blob = await (await fetch(record.data)).blob();
+            const name = record.name || "saved-photo.webp";
+            const optimized = await prepareLegacyBlob(blob, name, blob.type);
+            entries.push({ blob: optimized, name, legacySource: "localStorage", legacyKey: record.legacyKey });
+          }
+          const imported = await uploadMediaBatches(entries, (part, total) => setEditorStatus("Uploading saved media · batch " + part + " of " + total + "…"), async batch => {
+            for (const entry of batch) if (entry.legacySource === "indexedDB") await deleteMediaRecord(entry.legacyId);
+            const localKeys = new Set(batch.filter(entry => entry.legacySource === "localStorage").map(entry => entry.legacyKey));
+            if (localKeys.size) {
+              const saved = JSON.parse(localStorage.getItem(LEGACY_GALLERY_KEY) || "[]");
+              const remaining = saved.filter((item, index) => !localKeys.has(String(item?.id || "legacy-local-" + index)));
+              localStorage.setItem(LEGACY_GALLERY_KEY, JSON.stringify(remaining));
+            }
+            await inspectLegacyMedia();
+          });
+          galleryPhotos.push(...imported.map(item => ({ ...item, _enter: true }))); renderGallery(); slideTo(galleryPhotos.length - 1); setEditorStatus("Saved browser media is now shared."); showToast("Migrated saved media to the shared gallery.");
+        } catch (error) {
+          const imported = error.uploaded || [];
+          if (imported.length) { galleryPhotos.push(...imported.map(item => ({ ...item, _enter: true }))); renderGallery(); slideTo(galleryPhotos.length - 1); }
+          await inspectLegacyMedia(); setEditorStatus(error.message || "Migration failed.", true); showToast(error.message || "Migration failed.");
+        }
+        finally { button.disabled = false; }
+      }
+
+      function renderManager() {
+        managerList.replaceChildren();
+        const countLabel = document.getElementById("mediaCount"); countLabel.textContent = galleryPhotos.length + (galleryPhotos.length === 1 ? " shared item" : " shared items");
+      galleryPhotos.forEach((photo, index) => {
+        const row = document.createElement("div"); row.className = "manager-row";
+        const isVideo = photo.kind === "video";
+        const thumb = document.createElement(isVideo ? "video" : "img"); thumb.src = photo.url; thumb.alt = "";
+        if (isVideo) { thumb.preload = "none"; thumb.muted = true; thumb.playsInline = true; }
+        const fields = document.createElement("div"); fields.className = "manager-fields";
+        const nameLabel = document.createElement("label"); nameLabel.className = "manager-field-label"; nameLabel.textContent = "Display name";
+        const name = document.createElement("input"); name.className = "manager-field"; name.type = "text"; name.maxLength = 255; name.value = photo.name || ""; name.placeholder = "Name this photo or video"; name.setAttribute("aria-label", "Display name for " + (photo.name || "uploaded media"));
+        const meta = document.createElement("span"); meta.textContent = (isVideo ? "Video" : "Photo") + " · position " + (index + 1);
+        const captionLabel = document.createElement("label"); captionLabel.className = "manager-field-label"; captionLabel.textContent = "Caption";
+        const caption = document.createElement("input"); caption.className = "manager-field"; caption.type = "text"; caption.maxLength = 180; caption.value = photo.caption || ""; caption.placeholder = "Add a short caption"; caption.setAttribute("aria-label", "Caption for " + (photo.name || "uploaded media"));
+        fields.append(nameLabel, name, meta, captionLabel, caption);
+        const actions = document.createElement("div"); actions.className = "manager-actions";
+        const saveDetails = document.createElement("button"); saveDetails.type = "button"; saveDetails.className = "manager-action"; saveDetails.textContent = "Save details"; saveDetails.addEventListener("click", () => updateGalleryDetails(photo, name.value, caption.value, saveDetails));
+        const up = document.createElement("button"); up.type = "button"; up.className = "manager-action"; up.textContent = "↑"; up.title = "Move earlier"; up.disabled = index === 0; up.addEventListener("click", () => moveGalleryItem(index, -1));
+        const down = document.createElement("button"); down.type = "button"; down.className = "manager-action"; down.textContent = "↓"; down.title = "Move later"; down.disabled = index === galleryPhotos.length - 1; down.addEventListener("click", () => moveGalleryItem(index, 1));
+        const hide = document.createElement("button"); hide.type = "button"; hide.className = "manager-action remove-photo"; hide.textContent = "Hide"; hide.title = "Hide from public gallery"; hide.addEventListener("click", () => hideGalleryItem(photo));
+        actions.append(saveDetails, up, down, hide); row.append(thumb, fields, actions); managerList.appendChild(row);
+      });
+    }
+    async function updateGalleryDetails(photo, name, caption, button) {
+      const cleanName = name.trim(); const cleanCaption = caption.trim();
+      if (!cleanName) { setEditorStatus("Add a display name before saving.", true); return; }
+      button.disabled = true;
+      try { const result = await apiRequest("/api/gallery/" + encodeURIComponent(photo.id), { method: "PATCH", headers: authHeaders({ "Content-Type": "application/json" }), body: JSON.stringify({ name: cleanName, caption: cleanCaption }) }); const updated = normalizeItem(result?.item || result); Object.assign(photo, updated); renderGallery(); setEditorStatus("Display name and caption saved."); }
+      catch (error) { setEditorStatus(error.message || "Could not save media details.", true); }
+      finally { button.disabled = false; }
+    }
+      async function moveGalleryItem(index, direction) {
+        const target = index + direction; if (target < 0 || target >= galleryPhotos.length) return;
+        const ids = galleryPhotos.map(item => item.id); [ids[index], ids[target]] = [ids[target], ids[index]];
+        try { await apiRequest("/api/gallery/order", { method: "PUT", headers: authHeaders({ "Content-Type": "application/json" }), body: JSON.stringify({ ids }) }); const moved = galleryPhotos.splice(index, 1)[0]; galleryPhotos.splice(target, 0, moved); renderGallery(); setEditorStatus("Gallery order saved."); }
+        catch (error) { setEditorStatus(error.message || "Could not save gallery order.", true); }
+      }
+      async function hideGalleryItem(photo) {
+        if (!window.confirm("Hide this item from the public gallery? The bytes remain in project Storage.")) return;
+        try { await apiRequest("/api/gallery/" + encodeURIComponent(photo.id), { method: "DELETE", headers: authHeaders() }); galleryPhotos = galleryPhotos.filter(item => item.id !== photo.id); galleryIndex = Math.min(galleryIndex, Math.max(0, galleryPhotos.length - 1)); renderGallery(); setEditorStatus("Item hidden. Its bytes remain in project Storage."); }
+        catch (error) { setEditorStatus(error.message || "Could not hide this item.", true); }
+      }
+      const IMAGE_MIME_BY_EXTENSION = { jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", webp: "image/webp", gif: "image/gif", bmp: "image/bmp", avif: "image/avif" };
+      const IMAGE_MIMES = new Set(Object.values(IMAGE_MIME_BY_EXTENSION));
+      const VIDEO_MIME_BY_EXTENSION = { mp4: "video/mp4", m4v: "video/mp4", webm: "video/webm", mov: "video/quicktime" };
+      const VIDEO_MIMES = new Set(["video/mp4", "video/x-m4v", "video/webm", "video/quicktime"]);
+      function classifyUpload(file) {
+        const extension = String(file.name || "").split(".").pop().toLowerCase();
+        const declared = String(file.type || "").toLowerCase();
+        const imageMime = declared === "image/jpg" ? "image/jpeg" : declared;
+        if (VIDEO_MIMES.has(declared) || VIDEO_MIME_BY_EXTENSION[extension]) return { kind: "video", mime: VIDEO_MIME_BY_EXTENSION[extension] || (declared === "video/x-m4v" ? "video/mp4" : declared) };
+        if (IMAGE_MIMES.has(imageMime) || IMAGE_MIME_BY_EXTENSION[extension]) return { kind: "image", mime: IMAGE_MIME_BY_EXTENSION[extension] || imageMime };
+        return null;
+      }
+      function compressImage(file, maxSize = 1600) {
+        return new Promise((resolve, reject) => {
+          const detected = classifyUpload(file);
+          if (!detected || detected.kind !== "image") return reject(new Error("Unsupported image. Choose JPG/JPEG, PNG, WebP, GIF, BMP or AVIF."));
+          const source = file.type === detected.mime ? file : new Blob([file], { type: detected.mime });
+          const sourceUrl = URL.createObjectURL(source); const image = new Image();
+          image.onerror = () => { URL.revokeObjectURL(sourceUrl); reject(new Error("Could not open that image. If it is HEIC/HEIF, export it as JPG or PNG first.")); };
+          image.onload = () => { URL.revokeObjectURL(sourceUrl); const scale = Math.min(1, maxSize / Math.max(image.naturalWidth, image.naturalHeight)); const canvas = document.createElement("canvas"); canvas.width = Math.max(1, Math.round(image.naturalWidth * scale)); canvas.height = Math.max(1, Math.round(image.naturalHeight * scale)); const context = canvas.getContext("2d"); if (!context) return reject(new Error("Your browser could not prepare that image.")); context.drawImage(image, 0, 0, canvas.width, canvas.height); canvas.toBlob(blob => { if (blob?.type === "image/webp") resolve(blob); else canvas.toBlob(jpeg => jpeg ? resolve(jpeg) : reject(new Error("Could not optimize that image in this browser.")), "image/jpeg", .86); }, "image/webp", .82); };
+          image.src = sourceUrl;
+        });
+      }
+      async function addGalleryFiles(files) {
+        const entries = []; const rejected = [];
+        for (const file of Array.from(files)) {
+          const detected = classifyUpload(file);
+          if (!detected) { rejected.push(file.name + " (unsupported type)"); continue; }
+          const isVideo = detected.kind === "video";
+          if (isVideo && file.size > MAX_VIDEO_BYTES) { rejected.push(file.name + " (over the 80 MB video limit)"); continue; }
+          try {
+            const blob = isVideo ? (file.type === detected.mime ? file : new Blob([file], { type: detected.mime })) : await compressImage(file);
+            if (!isVideo && blob.size > MAX_IMAGE_BYTES) { rejected.push(file.name + " (over 15 MB after optimization)"); continue; }
+            entries.push({ blob, name: isVideo ? file.name : (file.name || "portfolio-image").replace(/\.[^.]+$/, "") + (blob.type === "image/jpeg" ? ".jpg" : ".webp") });
+          } catch (error) { rejected.push(file.name + " (" + (error.message || "could not prepare") + ")"); }
+        }
+        const rejectionSummary = rejected.length ? " Skipped: " + rejected.slice(0, 3).join("; ") + (rejected.length > 3 ? "; and " + (rejected.length - 3) + " more" : "") + "." : "";
+        if (rejected.length) { setEditorStatus(rejectionSummary, true); showToast(rejected.length + " file" + (rejected.length === 1 ? " was" : "s were") + " skipped. See upload status for details."); }
+        if (!entries.length) return;
+        try {
+          const added = await uploadMediaBatches(entries, (part, total, count) => setEditorStatus("Uploading batch " + part + " of " + total + " · " + count + " items…"));
+          galleryPhotos.push(...added.map(item => ({ ...item, _enter: true }))); renderGallery(); slideTo(galleryPhotos.length - 1);
+          setEditorStatus("Upload complete. " + added.length + " new item" + (added.length === 1 ? " is" : "s are") + " shared across devices." + rejectionSummary, rejected.length > 0); showToast("Added " + added.length + " shared " + (added.length === 1 ? "item" : "items") + (rejected.length ? "; " + rejected.length + " skipped." : "."));
+        } catch (error) {
+          const added = error.uploaded || [];
+          if (added.length) { galleryPhotos.push(...added.map(item => ({ ...item, _enter: true }))); renderGallery(); slideTo(galleryPhotos.length - 1); }
+          setEditorStatus(error.message || "Upload failed.", true); showToast(error.message || "Upload failed.");
+        }
+      }
+
+      function applyHeroPortrait(data) {
+        const heroImage = document.getElementById("heroPortraitImage"); const frame = document.getElementById("heroPortraitFrame"); const preview = document.getElementById("heroPreviewBox"); const remove = document.getElementById("removeHero");
+        const source = data || DEFAULT_HERO_PORTRAIT; heroImage.src = source; heroImage.hidden = false; frame.classList.add("has-image");
+        preview.replaceChildren(); preview.classList.remove("empty"); const previewImg = document.createElement("img"); previewImg.src = source; previewImg.alt = "Current hero portrait"; previewImg.className = "hero-preview"; preview.appendChild(previewImg); remove.hidden = !data || data === DEFAULT_HERO_PORTRAIT;
+      }
+      async function loadHero() { try { const result = await apiRequest("/api/hero"); heroPortraitData = result?.url || DEFAULT_HERO_PORTRAIT; } catch { heroPortraitData = DEFAULT_HERO_PORTRAIT; } applyHeroPortrait(heroPortraitData); }
+      async function migrateLegacyHero() {
+        if (!legacyHeroData) return;
+        const button = document.getElementById("migrateLegacyHero"); button.disabled = true;
+        try {
+          const original = await (await fetch(legacyHeroData)).blob();
+          const blob = await prepareLegacyBlob(original, "saved-hero.webp", original.type);
+          const form = new FormData(); form.append("file", blob, "saved-hero.webp");
+          const result = await apiRequest("/api/hero", { method: "PUT", headers: authHeaders(), body: form });
+          heroPortraitData = result?.url || DEFAULT_HERO_PORTRAIT;
+          localStorage.removeItem(LEGACY_HERO_KEY); legacyHeroData = "";
+          document.getElementById("heroMigrationCard").hidden = true;
+          applyHeroPortrait(heroPortraitData); showToast("Earlier portrait is now shared with every visitor.");
+        } catch (error) { showToast(error.message || "Could not import the earlier portrait."); }
+        finally { button.disabled = false; }
+      }
+      function openEditor() { editorBackdrop.classList.add("open"); editorBackdrop.setAttribute("aria-hidden", "false"); document.body.classList.add("locked"); if (editorContent.hidden) setTimeout(() => document.getElementById("galleryKey").focus(), 100); else document.getElementById("editorClose").focus(); }
+      function closeEditor() { editorBackdrop.classList.remove("open"); editorBackdrop.setAttribute("aria-hidden", "true"); galleryEditorFooter.hidden = true; document.body.classList.remove("locked"); editorContent.hidden = true; unlockForm.hidden = false; document.getElementById("galleryKey").value = ""; unlockError.textContent = ""; ownerKey = ""; }
+      document.getElementById("adminHint").addEventListener("click", openEditor);
+      document.getElementById("publicAddMedia").addEventListener("click", openEditor);
+      document.getElementById("editorClose").addEventListener("click", closeEditor);
+      editorBackdrop.addEventListener("click", event => { if (event.target === editorBackdrop) closeEditor(); });
+      document.getElementById("mediaLightboxClose").addEventListener("click", closeMediaViewer);
+      mediaLightbox.addEventListener("click", event => { if (event.target === mediaLightbox) closeMediaViewer(); });
+      document.addEventListener("keydown", event => {
+        if (event.altKey && event.shiftKey && event.key.toLowerCase() === "g") { event.preventDefault(); openEditor(); }
+        if (event.key === "Escape" && !mediaLightbox.hidden) { event.preventDefault(); closeMediaViewer(); return; }
+        if (event.key === "Escape" && editorBackdrop.classList.contains("open")) closeEditor();
+        const editable = event.target instanceof HTMLElement && (event.target.matches("input, textarea, select, [contenteditable='true']") || editorBackdrop.classList.contains("open"));
+        if (!editable && (event.key === "ArrowLeft" || event.key === "ArrowRight")) { event.preventDefault(); slideGallery(event.key === "ArrowLeft" ? -1 : 1); }
+      });
+      document.addEventListener("visibilitychange", syncActiveVideo);
+      unlockForm.addEventListener("submit", async event => {
+        event.preventDefault(); const input = document.getElementById("galleryKey"); const key = input.value;
+        if (!key) { unlockError.textContent = "Enter the owner key to continue."; return; }
+        const button = unlockForm.querySelector("button"); button.disabled = true; unlockError.textContent = "Verifying…";
+        try { const response = await fetch("/api/admin/verify", { method: "POST", headers: { Authorization: "Bearer " + key } }); if (!response.ok) throw new Error(response.status === 401 ? "That owner key was not accepted." : "Owner verification is unavailable right now."); ownerKey = key; input.value = ""; unlockForm.hidden = true; editorContent.hidden = false; galleryEditorFooter.hidden = false; unlockError.textContent = ""; renderManager(); inspectLegacyMedia(); applyHeroPortrait(heroPortraitData); document.querySelector(".editor-tab.active")?.focus(); }
+        catch (error) { unlockError.textContent = error.message || "Could not verify the owner key."; input.select(); }
+        finally { button.disabled = false; }
+      });
+      document.querySelectorAll(".editor-tab").forEach(tab => tab.addEventListener("click", () => { document.querySelectorAll(".editor-tab").forEach(other => { other.classList.remove("active"); other.setAttribute("aria-selected", "false"); }); tab.classList.add("active"); tab.setAttribute("aria-selected", "true"); document.querySelectorAll(".editor-pane").forEach(pane => { pane.hidden = pane.id !== tab.dataset.tab; }); galleryEditorFooter.hidden = tab.dataset.tab !== "galleryPane" || editorContent.hidden; }));
+      const galleryUpload = document.getElementById("galleryUpload");
+      document.getElementById("chooseGalleryFiles").addEventListener("click", () => galleryUpload.click());
+      galleryUpload.addEventListener("change", async () => { await addGalleryFiles(galleryUpload.files); galleryUpload.value = ""; });
+      document.getElementById("migrateLegacy").addEventListener("click", migrateLegacyMedia);
+      document.getElementById("migrateLegacyHero").addEventListener("click", migrateLegacyHero);
+      document.getElementById("galleryPrev").addEventListener("click", () => slideGallery(-1));
+      document.getElementById("galleryNext").addEventListener("click", () => slideGallery(1));
+      let pointerStart = null;
+      galleryGrid.addEventListener("pointerdown", event => { if (event.target.closest("video, button, input, a")) return; pointerStart = { x: event.clientX, y: event.clientY, id: event.pointerId }; galleryGrid.setPointerCapture?.(event.pointerId); });
+      galleryGrid.addEventListener("pointerup", event => { if (!pointerStart || event.pointerId !== pointerStart.id) return; const dx = event.clientX - pointerStart.x; const dy = event.clientY - pointerStart.y; pointerStart = null; if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.2) slideGallery(dx < 0 ? 1 : -1); });
+      galleryGrid.addEventListener("pointercancel", () => { pointerStart = null; });
+      const dropZone = document.getElementById("galleryDropZone");
+      ["dragenter", "dragover"].forEach(type => dropZone.addEventListener(type, event => { event.preventDefault(); dropZone.classList.add("drag-over"); }));
+      ["dragleave", "drop"].forEach(type => dropZone.addEventListener(type, event => { event.preventDefault(); dropZone.classList.remove("drag-over"); }));
+      dropZone.addEventListener("drop", event => addGalleryFiles(event.dataTransfer.files));
+      const heroUpload = document.getElementById("heroUpload");
+      document.getElementById("chooseHeroFile").addEventListener("click", () => heroUpload.click());
+      heroUpload.addEventListener("change", async () => { const file = heroUpload.files[0]; if (!file) return; try { const detected = classifyUpload(file); if (!detected || detected.kind !== "image") throw new Error("Choose JPG/JPEG, PNG, WebP, GIF, BMP or AVIF for the hero portrait."); const blob = await compressImage(file, 2000); const form = new FormData(); form.append("file", blob, "hero-portrait." + (blob.type === "image/jpeg" ? "jpg" : "webp")); const result = await apiRequest("/api/hero", { method: "PUT", headers: authHeaders(), body: form }); heroPortraitData = result?.url || DEFAULT_HERO_PORTRAIT; applyHeroPortrait(heroPortraitData); showToast("Shared hero portrait updated."); } catch (error) { showToast(error.message || "Could not update the hero portrait."); } heroUpload.value = ""; });
+      document.getElementById("removeHero").addEventListener("click", async () => { try { const result = await apiRequest("/api/hero", { method: "DELETE", headers: authHeaders() }); heroPortraitData = result?.url || DEFAULT_HERO_PORTRAIT; applyHeroPortrait(heroPortraitData); showToast("Hero portrait restored to the supplied default."); } catch (error) { showToast(error.message || "Could not reset the hero portrait."); } });
+      renderGallery(); applyHeroPortrait(DEFAULT_HERO_PORTRAIT); loadGallery(); loadHero();
+      document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener("click", event => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+        history.replaceState(null, "", link.getAttribute("href"));
+      }));
+    })();
+  </script>
+  <script>
+    (() => {
+      const canvas = document.getElementById("ambientCanvas");
+      const hero = document.getElementById("top");
+      if (!canvas || !hero || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      const context = canvas.getContext("2d", { alpha: true, desynchronized: true });
+      if (!context) return;
+      let width = 0, height = 0, scale = 1, frame = 0, inView = false, lastDraw = 0;
+      const motes = Array.from({ length: 30 }, () => ({
+        x: Math.random(), y: Math.random(), radius: .35 + Math.random() * 1.15,
+        drift: 8 + Math.random() * 26, phase: Math.random() * Math.PI * 2,
+        speed: .18 + Math.random() * .4, warm: Math.random() > .35
+      }));
+      function resizeCanvas() {
+        const rect = hero.getBoundingClientRect();
+        width = Math.max(1, rect.width); height = Math.max(1, rect.height);
+        scale = Math.min(1.5, window.devicePixelRatio || 1);
+        canvas.width = Math.round(width * scale); canvas.height = Math.round(height * scale);
+        context.setTransform(scale, 0, 0, scale, 0, 0);
+      }
+      function draw(now) {
+        frame = 0;
+        if (!inView || document.hidden) return;
+        if (now - lastDraw < 32) { frame = requestAnimationFrame(draw); return; }
+        lastDraw = now;
+        context.clearRect(0, 0, width, height);
+        const seconds = now * .001;
+        motes.forEach(mote => {
+          const x = mote.x * width + Math.sin(seconds * mote.speed + mote.phase) * mote.drift;
+          const y = mote.y * height + Math.cos(seconds * mote.speed * .65 + mote.phase) * mote.drift * .5;
+          const alpha = .025 + .065 * (.5 + .5 * Math.sin(seconds * .45 + mote.phase));
+          context.beginPath(); context.arc(x, y, mote.radius, 0, Math.PI * 2);
+          context.fillStyle = `rgba(${mote.warm ? "255,106,61" : "243,241,234"},${alpha})`;
+          context.shadowBlur = mote.radius * 5; context.shadowColor = mote.warm ? "rgba(255,106,61,.38)" : "rgba(243,241,234,.22)";
+          context.fill();
+        });
+        context.shadowBlur = 0;
+        frame = requestAnimationFrame(draw);
+      }
+      function syncMotion() {
+        if (inView && !document.hidden && !frame) frame = requestAnimationFrame(draw);
+        else if ((!inView || document.hidden) && frame) { cancelAnimationFrame(frame); frame = 0; context.clearRect(0, 0, width, height); }
+      }
+      resizeCanvas();
+      if ("ResizeObserver" in window) new ResizeObserver(resizeCanvas).observe(hero);
+      else window.addEventListener("resize", resizeCanvas, { passive: true });
+      new IntersectionObserver(entries => { inView = entries.some(entry => entry.isIntersecting); syncMotion(); }, { threshold: 0 }).observe(hero);
+      document.addEventListener("visibilitychange", syncMotion);
+    })();
+  </script>
+
+</body>
+</html>

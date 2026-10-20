@@ -1,0 +1,19 @@
+{
+  "name": "nishant-film-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Same-origin API and static server for Nishant Tiwari's film portfolio",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npx serve . -p 3000 --no-clipboard",
+    "check": "node --check server.js"
+  },
+  "dependencies": {
+    "busboy": "1.6.0",
+    "mysql2": "3.24.6"
+  }
+}
