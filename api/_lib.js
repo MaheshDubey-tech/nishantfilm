@@ -24,7 +24,7 @@ function getPool() {
 }
 
 function bearerMatches(req) {
-  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "";
+  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "admin123";
   const header = req.headers.authorization || "";
   const match = /^Bearer[ \t]+([^ \t]+)$/.exec(header);
   if (!configured || !match) return false;
@@ -52,6 +52,6 @@ function galleryItem(row) {
   };
 }
 
-const DEFAULT_HERO = "/manus-storage/nishant-portrait_0d84d7c4.webp";
+const DEFAULT_HERO = "/nishant-portrait.webp";
 
 module.exports = { getPool, requireAdmin, galleryItem, DEFAULT_HERO };

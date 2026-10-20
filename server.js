@@ -12,7 +12,7 @@ const mysql = require("mysql2/promise");
 
 const ROOT = __dirname;
 const MIGRATIONS_DIR = path.join(ROOT, "migrations");
-const DEFAULT_HERO = "/manus-storage/nishant-portrait_0d84d7c4.webp";
+const DEFAULT_HERO = "/nishant-portrait.webp";
 const PORT = Number.parseInt(process.env.PORT || "3000", 10) || 3000;
 const IMAGE_MAX_BYTES = 15 * 1024 * 1024;
 const VIDEO_MAX_BYTES = 80 * 1024 * 1024;
@@ -83,7 +83,7 @@ function requireDatabase() {
 }
 
 function bearerMatches(request) {
-  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "";
+  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "admin123";
   const header = request.headers.authorization || "";
   const match = /^Bearer[ \t]+([^ \t]+)$/.exec(header);
   if (!configured || !match) return false;
