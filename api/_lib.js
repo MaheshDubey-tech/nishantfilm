@@ -24,7 +24,7 @@ function getPool() {
 }
 
 function bearerMatches(req) {
-  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "admin123";
+  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "NISHANTADD";
   const header = req.headers.authorization || "";
   const match = /^Bearer[ \t]+([^ \t]+)$/.exec(header);
   if (!configured || !match) return false;

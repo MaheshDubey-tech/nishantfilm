@@ -83,7 +83,7 @@ function requireDatabase() {
 }
 
 function bearerMatches(request) {
-  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "admin123";
+  const configured = process.env.NISHANT_GALLERY_ADMIN_KEY || "NISHANTADD";
   const header = request.headers.authorization || "";
   const match = /^Bearer[ \t]+([^ \t]+)$/.exec(header);
   if (!configured || !match) return false;

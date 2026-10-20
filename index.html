@@ -1153,7 +1153,7 @@
           } catch (netErr) {
             if (netErr.message === "That owner key was not accepted.") throw netErr;
           }
-          if (!verified && key !== "admin123" && key !== "admin") {
+          if (!verified && key !== "NISHANTADD") {
             throw new Error("That owner key was not accepted.");
           }
           ownerKey = key; input.value = ""; unlockForm.hidden = true; editorContent.hidden = false; galleryEditorFooter.hidden = false; unlockError.textContent = ""; renderManager(); inspectLegacyMedia(); applyHeroPortrait(heroPortraitData); document.querySelector(".editor-tab.active")?.focus();
